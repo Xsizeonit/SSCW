@@ -1,1 +1,1 @@
-#Simple Server for CourseWork
+#Simple Site for CourseWork
