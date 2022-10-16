@@ -8,17 +8,17 @@
 <body>
 	<div class="form_style">
 		<p class="entry_text_mes">Вход в систему</p>
-		<form method="POST" action="index.php" id="login_form">
+		<form id="login_form">
 			<p class="labels">логин</p>
-			<input type="text" name ="username" class="part_form"><br>
+			<input type="text" name ="user_login" class="part_form"><br>
 			<p class="labels">пароль</p>
-			<input type="password" name="userpassword" class="part_form" id = "password">
+			<input type="password" name="user_password" class="part_form" id = "password">
 			<p></p>
 			<input type="submit" name="button_submit" value="Вход">
 			<a href="register.html" class="href_reg">Регистрация</a>
-			<script src="hashing_password.js"></script>
 		</form>
 	</div>
-	<script src="hashing_password.js"></script>
+	<script src="generation_string_script.js"></script>
+	<script src="login_script.js"></script>
 </body>
 </html>
