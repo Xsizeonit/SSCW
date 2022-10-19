@@ -9,7 +9,7 @@ function handleFormSubmit(event) {
 	userInput = prepareDataToSend(userInput);
 
 	if(userInput != false) {
-		console.log("sending_data");
+		sendJsonData(userInput);
 	}
 	else {
 		console.log("Error");

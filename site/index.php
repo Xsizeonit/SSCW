@@ -1,5 +1,7 @@
 <?php
-	print "Hello, ";
-	print $_POST['username'];
-	print "!";
+
+$data = $_GET['userName'];
+echo "Your login is: ";
+echo $data;
+
 ?>
