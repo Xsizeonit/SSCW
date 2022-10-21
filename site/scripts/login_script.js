@@ -1,6 +1,9 @@
 function handleFormSubmit(event) {
 	event.preventDefault();
 
+	let errorMes = document.getElementById('warning_message');
+	errorMes.innerHTML = '';
+
 	let userInput = {
 		userName: appForm.elements[0].value,
 		userPassword: appForm.elements[1].value
@@ -12,7 +15,8 @@ function handleFormSubmit(event) {
 		sendJsonData(userInput);
 	}
 	else {
-		console.log("Error");
+		errorMes.style.color = 'red';
+		errorMes.innerHTML = 'Логин и пароль не могут быть пустыми!';
 	}
 }
 

@@ -1,5 +1,5 @@
 function stringIsEmpty(str) {
-	if(str === "")
+	if(str === '')
 		return true;
 	return false;
 }
@@ -8,10 +8,8 @@ function prepareDataToSend(obj) {
 	let key;
 
 	for(key in obj)
-		obj[key] = obj[key].replace(/\s+/g, "");
-
-	for(key in obj)
 		if(stringIsEmpty(obj[key])) {
+			console.log("False");
 			return false;
 		}
 
