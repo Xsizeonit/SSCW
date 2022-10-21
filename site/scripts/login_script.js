@@ -12,11 +12,12 @@ function handleFormSubmit(event) {
 	userInput = prepareDataToSend(userInput);
 
 	if(userInput != false) {
-		sendJsonData(userInput);
+		let urlLoginSuccess = "login_success.html";
+		sendData(userInput, urlLoginSuccess);
 	}
 	else {
-		errorMes.style.color = 'red';
-		errorMes.innerHTML = 'Логин и пароль не могут быть пустыми!';
+		errorMes.style.color = '#bd1217';
+		errorMes.innerHTML = 'Логин и пароль не могут быть пустыми и не могут содержать пробелы!';
 	}
 }
 

@@ -4,19 +4,21 @@ function stringIsEmpty(str) {
 	return false;
 }
 
+function isSpaceInString(str) {
+	for(let index in str)
+		if(str[index] === " ")
+			return true;
+	return false;
+}
+
 function prepareDataToSend(obj) {
-	let key;
-
-	for(key in obj)
-		if(stringIsEmpty(obj[key])) {
-			console.log("False");
+	for(let key in obj)
+		if(stringIsEmpty(obj[key]) || isSpaceInString(obj[key]))
 			return false;
-		}
-
 	return obj;
 }
 
-function sendJsonData(obj) {
+function sendData(obj, urlSuccess) {
 
 	$.ajax({
 		url: phpUrl,
@@ -24,12 +26,10 @@ function sendJsonData(obj) {
     	dataType: 'html',
     	data: obj,
     	success: function(data) {
-    		/*
-    		new_window = window.open();
-    		new_window.document.write(data);
-    		new_window.document.close();
-    		*/
-    		console.log(data);
+    		window.location.replace(urlSuccess);
+    		//new_window = window.open("file:///login_success.html", "mywindow");
+    		window.document.write(data);
+    		//new_window.document.close();
     	}
 	});
 }

@@ -20,14 +20,15 @@ function handleFormSubmit(event) {
 	let result_compare = equPasswordsInput(userInput.userPassword, userInput.userPasswordReplay);
 
 	if((userInput != false) && (result_compare === true)) {
-		console.log("sending_data");
+		let urlRegisterSuccess = "register_success.html";
+		sendData(userInput, urlRegisterSuccess);
 	}
 	else {
-		errorMes.style.color = 'red';
+		errorMes.style.color = '#bd1217';
 		if(result_compare === false)
 			errorMes.innerHTML = 'Пароли не совпадают!';
 		else
-			errorMes.innerHTML = 'Логин и пароль не должны быть пустыми!';
+			errorMes.innerHTML = 'Логин и пароль не могут быть пустыми и не могут содержать пробелы!';
 	}
 }
 
