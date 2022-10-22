@@ -11,6 +11,10 @@ function isSpaceInString(str) {
 	return false;
 }
 
+
+/*
+ * If string is empry or contains at least one space - error, return false in calling function
+ */
 function prepareDataToSend(obj) {
 	for(let key in obj)
 		if(stringIsEmpty(obj[key]) || isSpaceInString(obj[key]))
@@ -18,20 +22,21 @@ function prepareDataToSend(obj) {
 	return obj;
 }
 
-function sendData(obj, urlSuccess) {
+
+/*
+ * Sending GET request to server in serverURL and if it success - go to the page (login_succes.html or
+ * register_success.html)
+ */
+function sendData(obj, urlSuccess, serverURL) {
 
 	$.ajax({
-		url: phpUrl,
+		url: serverURL,
     	method: 'get',
     	dataType: 'html',
     	data: obj,
     	success: function(data) {
     		window.location.replace(urlSuccess);
-    		//new_window = window.open("file:///login_success.html", "mywindow");
     		window.document.write(data);
-    		//new_window.document.close();
     	}
 	});
 }
-
-let phpUrl = "./index.php";
